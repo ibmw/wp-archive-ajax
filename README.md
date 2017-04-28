@@ -1,11 +1,10 @@
 # wp-fcy-archive-ajax
-Contributors: Olivier
-Decription : Create a fancy archive page by year and month
-Tags: Wordpress, Archive, AJAX
-Version: 1.0.0
-Author: Olivier Maillot
-Author URI: http://www.olivier-maillot.fr
-License: Free
+- Author: Olivier Maillot
+- Decription : Create a fancy archive page by year and month
+- Tags: Wordpress, Archive, AJAX
+- Version: 1.0.0
+- Author URI: http://www.olivier-maillot.fr
+- License: Free
 
 ## Install
 
