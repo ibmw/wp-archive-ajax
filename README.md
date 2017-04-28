@@ -9,7 +9,7 @@ License: Free
 
 ## Install
 
-1. Upload 'archive-ajax' to the '/wp-content/plugins/' directory,
+1. Upload 'WP-FcyArchive-AJAX' to the '/wp-content/plugins/' directory,
 2. Activate the plugin through the 'Plugins' menu in WordPress.
 3. Create a new page through the 'Plugins' menu "Pages" in WordPress.
 4. Write the shortcode [ajax-archive] in the editor.
