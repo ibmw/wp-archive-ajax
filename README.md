@@ -1,6 +1,6 @@
 # wp-fcy-archive-ajax
 - Author: Olivier Maillot
-- Decription : Create a fancy archive page by year and month
+- Decription : Create a fancy archive page by year and month for Wordpress
 - Tags: Wordpress, Archive, AJAX
 - Version: 1.0.0
 - Author URI: http://www.olivier-maillot.fr
