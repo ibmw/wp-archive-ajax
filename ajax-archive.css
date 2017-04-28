@@ -1,0 +1,136 @@
+/* Archives */
+@import url(http://fonts.googleapis.com/css?family=Open+Sans);
+@import url(http://fonts.googleapis.com/css?family=Oswald);
+/* Menu archive */
+#archive_years,
+#archive_months {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px;
+    text-decoration: none;
+}
+#archive_years {
+    font-family: "Oswald";
+    font-size: 22px;
+    letter-spacing: 1.2px;
+    text-align: center;
+}
+#archive_months {
+    font-family: "Open Sans";
+    font-weight: 300;
+    font-size: 16px;
+    letter-spacing: 1.2px;
+}
+#archive_years li {
+    display: inline;
+    margin: 0;
+    padding: 5px 10px;
+    color: #464646;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+#archive_years li:hover,
+#archive_years li.current {
+    color: #fff;
+    background-color: #ffbf00;
+    -moz-transition: all 0.3s ease-out;
+    -webkit-transition: all 0.3s ease-out;
+    -o-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+#archive_months li {
+    display: inline;
+    margin: 0 5px;
+    padding: 2px 5px;
+    color: #d3caca;
+    background-color: transparent;
+}
+#archive_months li.active {
+    padding: 2px;
+    color: #464646;
+    cursor: pointer;
+}
+#archive_months li.active:hover,
+#archive_months li.active.current {
+    color: #ffbf00;
+    border-bottom: 2px solid #ffbf00;
+    -moz-transition: all 0.2s ease-out;
+    -webkit-transition: all 0.2s ease-out;
+    -o-transition: all 0.2s ease-out;
+    transition: all 0.2s ease-out;
+}
+#result_month {
+    border : 1px solid #eee;
+    text-align: center;
+}
+/* post archive */
+.slice {
+    border-bottom: 10px solid #000;
+    background-color: #000;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-position: 70% 30%;
+    -webkit-transition: background .2s;
+    -moz-transition: background .2s;
+    -o-transition: background .2s;
+    -ms-transition: background .2s;
+    transition: background .2s;
+}
+
+.slice:hover {
+    cursor: pointer;
+}
+
+.slice:hover .table {
+    background: rgba(0, 0, 0, .60);
+}
+
+.slice .table {
+    display: table;
+    width: 100%;
+    background: rgba(0, 0, 0, .70);
+    -webkit-transition: all .5s ease;
+}
+
+.slice.no-image {
+    background: #171717;
+}
+
+.slice.no-image .table {
+    background: 0 0;
+}
+
+.slice .cell {
+    display: table-cell;
+    vertical-align: middle;
+    height: 250px;
+}
+.slice .cell .constrain {
+    max-width: 640px;
+    margin: auto;
+}
+.slice .kicker {
+    color: #ffbf00;
+    font-family: "Open Sans", sans-serif;
+    text-transform: uppercase;
+    font-size: 16px;
+    display: block;
+    text-decoration: none;
+}
+
+.slice .slide-title {
+    color: #fff;
+    font-size: 30px;
+    font-family: Oswald;
+    line-height: 35px;
+    letter-spacing: 2px;
+    display: inline-block;
+}
+
+.slice .slide-title a {
+    color: #fff;
+    text-decoration: none;
+}
