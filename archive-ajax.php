@@ -4,7 +4,7 @@
  * Plugin Name: Fcy Ajax Archive
  * Plugin URI: https://github.com/ibmw
  * Description: This is a plugin that allows us to create an archive page by year and month.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Olivier Maillot
  * Author URI: http://www.olivier-maillot.fr
  * License: Free
@@ -45,18 +45,19 @@ add_action( 'wp_ajax_mya_req_month', 'mya_req_month' );
 add_action( 'wp_ajax_nopriv_mya_req_month', 'mya_req_month' );
 function mya_req_month() {
 	global $wpdb;
-    
+
     $yr = $_POST['yr'];
-    
-    // Request 
+
+    // Request
     $mths = $wpdb->get_col("
         SELECT DISTINCT MONTH( post_date )
         FROM $wpdb->posts
         WHERE post_status = 'publish'
+        AND post_type = 'post'
         AND YEAR(post_date) = '".$yr."'
         ORDER BY post_date ASC
     ");
-    $list_of_months = array(">Janvier", ">Fevrier", ">Mars", ">Avril", ">Mai", ">Juin", ">Juillet", ">Aout", ">Septembre", ">Octobre", ">Novembre", ">Decembre");
+    $list_of_months = array('>January', '>February', '>March', '>April', '>May', '>June', '>July', '>August', '>September', '>October', '>November', '>December');
     foreach ($mths as $mth) {
         $list_of_months[$mth-1] = 'class="active"' . $list_of_months[$mth-1];
     }
@@ -74,30 +75,30 @@ add_action( 'wp_ajax_mya_req_article', 'mya_req_article' );
 add_action( 'wp_ajax_nopriv_mya_req_article', 'mya_req_article' );
 function mya_req_article() {
 	global $wpdb;
-    
+
     $yr = $_POST['yr'];
     $mth = $_POST['mth'];
 
-    // Req WP_QUERY  
-    $qry = array( 
-            'post_type' => 'post', 
-            'post_status' => 'publish', 
+    // Req WP_QUERY
+    $qry = array(
+            'post_type' => 'post',
+            'post_status' => 'publish',
             'orderby' => 'post_date',
             'order'   => 'DESC',
             'posts_per_page' => -1,
-            'date_query' => array( 
-                                array( 
+            'date_query' => array(
+                                array(
                                     'year'  => $yr,
                                     'month' => $mth,
                                 ),
                             ),
             );
-    
+
     $article = new WP_Query( $qry );
-    
+
     while ( $article->have_posts() ) {
 	   $article->the_post();
-	   
+
         if(has_post_thumbnail(get_the_ID(), 'full'))
     		{
     		    $image_id = get_post_thumbnail_id(get_the_ID());
@@ -110,16 +111,16 @@ function mya_req_article() {
 		      $category .= $cat->cat_name. ' ';
 	       }
         }
-        echo '<a href="' . get_permalink() . '">     
+        echo '<a href="' . get_permalink() . '">
             <article class="slice" style="background-image: url(' . $image_thumb[0] . ');">
                 <div class="table">
                     <div class="cell">
-                        <div class="constrain">                     
+                        <div class="constrain">
                             <span class="kicker">' . $category . '</span>		                                                   <h2 class="slide-title">' . get_the_title() . '</h2>
                         </div>
-                    </div>         
-                </div>     
-            </article> 
+                    </div>
+                </div>
+            </article>
         </a>';
     }
     die();
