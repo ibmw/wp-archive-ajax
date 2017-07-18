@@ -2,7 +2,7 @@
 - Author: Olivier Maillot
 - Decription : Create a fancy archive page by year and month for Wordpress
 - Tags: Wordpress, Archive, AJAX
-- Version: 1.0.0
+- Version: 1.0.1
 - Author URI: http://www.olivier-maillot.fr
 - License: Free
 
